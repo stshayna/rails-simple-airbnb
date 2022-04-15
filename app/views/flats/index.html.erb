@@ -4,5 +4,9 @@
   <p><%= flat.address %></p>
   <p><i class="fa-solid fa-user-check"></i> <%= flat.number_of_guests %></p>
   <p><i class="fa-solid fa-dollar-sign"></i> <%= flat.price_per_night %></p>
-  <p><%= link_to "Details", flat_path(flat) %></p>
+  <ul>
+    <li><%= link_to "Details", flat_path(flat) %></li>
+    <li><%= link_to "Edit", edit_flat_path(flat) %></li>
+    <li><%= link_to 'Delete', flat_path(flat), method: :delete, data: { confirm: "Delete #{flat.name}?" } %></li>
+  </ul>
 <% end %>
