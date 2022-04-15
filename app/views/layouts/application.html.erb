@@ -6,11 +6,16 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v6.0.0/css/all.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div class="header">
+      <h3>Simple Airbnb</h3>
+      <h3><i class="fa-regular fa-square-plus"></i>  <%= link_to 'Add A Flat', new_flat_path %></h3>
+    </div>
     <%= yield %>
   </body>
 </html>
