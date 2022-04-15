@@ -1,7 +1,8 @@
 <h1>All Flats (<%= @flats.count %>)</h1>
 <% @flats.each do |flat| %>
   <h2><%= flat.name %></h2>
-  <p><i class="fa-solid fa-user-check"></i> <%= flat.address %></p>
+  <p><%= flat.address %></p>
+  <p><i class="fa-solid fa-user-check"></i> <%= flat.number_of_guests %></p>
   <p><i class="fa-solid fa-dollar-sign"></i> <%= flat.price_per_night %></p>
   <p><%= link_to "Details", flat_path(flat) %></p>
 <% end %>
