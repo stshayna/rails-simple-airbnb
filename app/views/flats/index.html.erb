@@ -1,12 +1,44 @@
-<h1>All Flats (<%= @flats.count %>)</h1>
-<% @flats.each do |flat| %>
-  <h2><%= flat.name %></h2>
-  <p><%= flat.address %></p>
-  <p><i class="fa-solid fa-user-check"></i> <%= flat.number_of_guests %></p>
-  <p><i class="fa-solid fa-dollar-sign"></i> <%= flat.price_per_night %></p>
-  <ul>
-    <li><%= link_to "Details", flat_path(flat) %></li>
-    <li><%= link_to "Edit", edit_flat_path(flat) %></li>
-    <li><%= link_to 'Delete', flat_path(flat), method: :delete, data: { confirm: "Delete #{flat.name}?" } %></li>
-  </ul>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>All Flats (<%= @flats.count %>)</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <% if @query %>
+        <p>You searched for <strong><%= @query %></strong>.
+        We found <%= @flats.count %> out of our <%= Flat.count %> flats.</p>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @flats.each do |flat| %>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-content">
+            <h4><%= flat.name %></h4>
+            <p><%= flat.address %></p>
+            <div class="flex">
+              <div class="flex">
+                <p><i class="fa-solid fa-user-check"></i> <%= flat.number_of_guests %></p>
+              </div>
+              <div class="flex ms-3">
+                <p><i class="fa-solid fa-dollar-sign"></i> <%= flat.price_per_night %></p>
+              </div>
+            </div>
+          </div>
+          <div class="card-actions">
+            <%= link_to "Details", flat_path(flat) %>
+            <%= link_to "Edit", edit_flat_path(flat) %>
+            <%= link_to 'Delete', flat_path(flat),
+                method: :delete, data: { confirm: "Delete #{flat.name}?" }
+            %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
