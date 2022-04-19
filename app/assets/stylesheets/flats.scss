@@ -11,3 +11,24 @@
 .card-actions {
   padding: 16px 24px;
 }
+.flat-image {
+  height: 180px;
+  background-size: cover;
+}
+.card {
+  margin: .5rem 0;
+}
+.show-bg {
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+}
+.show-card {
+  background:rgb(245, 245, 245);
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 2px rgb(230, 230, 230);
+}
+.mt-negative {
+  margin-top: -75px;
+}
